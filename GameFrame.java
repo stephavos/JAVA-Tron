@@ -6,19 +6,26 @@ import java.awt.event.ActionListener;
 import javax.swing.JFrame;
 import javax.swing.WindowConstants;
 
+// TODO: Auto-generated Javadoc
+/**
+ * The Class GameFrame.
+ */
 public class GameFrame extends JFrame implements ActionListener{
 
-	/**
-	 * 
-	 */
+	/** The Constant serialVersionUID. */
 	private static final long serialVersionUID = 1L;
 
 
+	/** The Constant FRAME_HEIGHT. */
 	public static final int FRAME_WIDTH = GamePanel.W, FRAME_HEIGHT = GamePanel.H;
 
 	
+	/** The game panel. */
 	public GamePanel gamePanel;
 
+	/**
+	 * Instantiates a new game frame.
+	 */
 	public GameFrame() {
 		
 		setSize(FRAME_WIDTH, FRAME_HEIGHT);
@@ -37,6 +44,9 @@ public class GameFrame extends JFrame implements ActionListener{
 		
 	}
 
+	/* (non-Javadoc)
+	 * @see java.awt.event.ActionListener#actionPerformed(java.awt.event.ActionEvent)
+	 */
 	public void actionPerformed(ActionEvent e) {
 		
 			gamePanel.setVisible(true);
