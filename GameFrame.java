@@ -29,7 +29,7 @@ public class GameFrame extends JFrame implements ActionListener{
 	public GameFrame() {
 		
 		setSize(FRAME_WIDTH, FRAME_HEIGHT);
-		setTitle("Tron Java - Ivan CHABAN A1");
+		setTitle("Tron Java");
 		setResizable(false);
 		
 		setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
