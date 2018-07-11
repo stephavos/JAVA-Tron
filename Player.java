@@ -130,19 +130,19 @@ public class Player {
 	 */
 	public boolean loosed(Player other, int maxWidth, int maxHeight)
 	{
-		/*
+		/**
 		 * collision with oneself
 		 */
 		for(LengthNode p = head.getNext(); p.getNext() != null ; p = p.getNext())
 			if(head.sameValues(p))
 				return true;
-		/*
+		/**
 		 * collision with the opponent
 		 */
 		for(LengthNode p = other.getHead(); p.getNext() != null ; p = p.getNext())
 			if(head.sameValues(p))
 				return true;
-		/*
+		/**
 		 * collision with a wall
 		 */
 		if(head.getX() < 0 || head.getY() < 0 || head.getX() > maxWidth + Tron.PIXELSIZE || head.getY() > maxHeight + Tron.PIXELSIZE)
@@ -158,7 +158,7 @@ public class Player {
 	 */
 	public void isWinner(long gameTimer) {
 		
-		/*
+		/**
 		 * long converted to float
 		 */
 		float GameTimer = gameTimer;
@@ -166,9 +166,9 @@ public class Player {
 		String Time = Float.toString(GameTimer);
 		
 		try {
-			String url="jdbc:mysql://chabanvpn.ovh:3306/tron?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC&useSSL=false";
-		    String user="root";
-		    String password="";
+			String url="jdbc:mysql://localhost/lorann?useSL=false&serverTimezone=UTC";
+		    String user="Tron";
+		    String password="root";
 		   
 		    Connection conn = null;
 		    conn = DriverManager.getConnection(url, user, password);
@@ -193,7 +193,7 @@ public class Player {
 		System.out.println("->time of the game: " + GameTimer + "s");
 		System.out.println("-> END!");
 		
-		/*
+		/**
 		 * Pop-up window
 		 */
 		JOptionPane.showMessageDialog(null, "Playeur " + this.getName() + " WON!\npress F8 after OK to start again", "Game Over", JOptionPane.INFORMATION_MESSAGE);
@@ -210,7 +210,7 @@ public class Player {
 		g.setColor(color);
 		LengthNode p = head;
 		for(;p != null; p=p.getNext()) {
-			g.fillRect(p.getX(), p.getY(), Tron.PIXELSIZE, Tron.PIXELSIZE);	//AJOUTER au joueur un carré de pos getX, getY de la taille PIXELSIZE
+			g.fillRect(p.getX(), p.getY(), Tron.PIXELSIZE, Tron.PIXELSIZE);	
 		}
 	}
 	
