@@ -11,7 +11,6 @@ import javax.swing.JOptionPane;
 
 import Main.Tron;
 
-// TODO: Auto-generated Javadoc
 /**
  * The Class Player.
  */
@@ -98,19 +97,19 @@ public class Player {
 	{
 		switch(direction)
 		{
-		case 0: 		//UP
+		case 0: 		
 			head = new LengthNode(head.getX(), head.getY() - Tron.PIXELSIZE, head);
 			break;
-		case 1: 		//RIGHT
+		case 1: 		
 			head = new LengthNode(head.getX() + Tron.PIXELSIZE, head.getY(), head);
 			break;
-		case 2: 		//DOWN
+		case 2: 		
 			head = new LengthNode(head.getX(), head.getY() + Tron.PIXELSIZE, head);
 			break;
-		case 3: 		//LEFT
+		case 3: 		
 			head = new LengthNode(head.getX() - Tron.PIXELSIZE, head.getY(), head);
 			break;
-		case -1: 		//LEFT DEBUG: En Java % n'est pas MODULO, mais RESTE donc si reste négatif, alors revenir à la norme.
+		case -1: 		
 			this.direction = 3;
 			head = new LengthNode(head.getX(), head.getY() - Tron.PIXELSIZE, head);
 			break;
@@ -164,11 +163,12 @@ public class Player {
 		float GameTimer = gameTimer;
 		GameTimer = GameTimer/1000;
 		String Time = Float.toString(GameTimer);
+	
 		
-		try {
-			String url="jdbc:mysql://localhost/lorann?useSL=false&serverTimezone=UTC";
-		    String user="Tron";
-		    String password="root";
+		try {//http://localhost/phpmyadmin/db_structure.php?server=1&db=projet+java&token=c994b456fe1e28e8fc59ef52cbf98679
+			String url="jdbc:mysql://localhost:3306/tron?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC&useSSL=false";
+		    String user="root";
+		    String password="";
 		   
 		    Connection conn = null;
 		    conn = DriverManager.getConnection(url, user, password);
