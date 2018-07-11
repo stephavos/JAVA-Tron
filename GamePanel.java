@@ -15,18 +15,31 @@ import Controller.GameLogic;
 import Main.Tron;
 import Model.Player;
 
+// TODO: Auto-generated Javadoc
+/**
+ * The Class GamePanel.
+ */
 public class GamePanel extends JPanel implements ActionListener, KeyListener{
 
 
+	/** The Constant serialVersionUID. */
 	private static final long serialVersionUID = 1L;
 
+	/** The logic. */
 	private GameLogic logic;
 	
+	/** The Constant H. */
 	public static final int W = Tron.GRIDW * Tron.PIXELSIZE, H = Tron.GRIDH * Tron.PIXELSIZE;
 
+	/** The Clock. */
 	Timer Clock;
+	
+	/** The start time. */
 	public static long  startTime;
 
+	/**
+	 * Instantiates a new game panel.
+	 */
 	public GamePanel() {
 		
 		
@@ -43,6 +56,9 @@ public class GamePanel extends JPanel implements ActionListener, KeyListener{
 
 	
 
+	/* (non-Javadoc)
+	 * @see javax.swing.JComponent#paintComponent(java.awt.Graphics)
+	 */
 	public void paintComponent(Graphics g)
 	{
 		super.paintComponent(g);
@@ -51,6 +67,9 @@ public class GamePanel extends JPanel implements ActionListener, KeyListener{
 
 
 	
+	/**
+	 * Start.
+	 */
 	public void start() {
 		/*
 		 * calculates part time
@@ -69,6 +88,9 @@ public class GamePanel extends JPanel implements ActionListener, KeyListener{
 	
 	
 
+	/* (non-Javadoc)
+	 * @see java.awt.event.ActionListener#actionPerformed(java.awt.event.ActionEvent)
+	 */
 	public void actionPerformed(ActionEvent e) {
 		/*
 		 * With each cycle of Clock
@@ -94,6 +116,9 @@ public class GamePanel extends JPanel implements ActionListener, KeyListener{
 
 	}
 
+/* (non-Javadoc)
+ * @see java.awt.event.KeyListener#keyPressed(java.awt.event.KeyEvent)
+ */
 public void keyPressed(KeyEvent e) {
 	/*
 	 * Player 1 keys if "directional" mode
@@ -171,11 +196,17 @@ public void keyPressed(KeyEvent e) {
 	}
 }
 
+	/* (non-Javadoc)
+	 * @see java.awt.event.KeyListener#keyReleased(java.awt.event.KeyEvent)
+	 */
 	public void keyReleased(KeyEvent arg0) {
 		// TODO Auto-generated method stub
 
 	}
 
+	/* (non-Javadoc)
+	 * @see java.awt.event.KeyListener#keyTyped(java.awt.event.KeyEvent)
+	 */
 	public void keyTyped(KeyEvent arg0) {
 		// TODO Auto-generated method stub
 
