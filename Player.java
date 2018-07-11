@@ -11,15 +11,36 @@ import javax.swing.JOptionPane;
 
 import Main.Tron;
 
+// TODO: Auto-generated Javadoc
+/**
+ * The Class Player.
+ */
 public class Player {
 
+	/** The name. */
 	private String name;
+	
+	/** The direction. */
 	private int direction;
+	
+	/** The head. */
 	private LengthNode head;
+	
+	/** The color. */
 	private Color color;
 
+	/** The left. */
 	public static int UP = 0, RIGHT = 1, DOWN = 2, LEFT = 3;
 
+	/**
+	 * Instantiates a new player.
+	 *
+	 * @param name the name
+	 * @param direction the direction
+	 * @param color the color
+	 * @param x the x
+	 * @param y the y
+	 */
 	public Player(String name, int direction, Color color, int x, int y) {
 		
 		this.name = name;
@@ -28,11 +49,21 @@ public class Player {
 		head = new LengthNode(x, y, null);
 	}
 
+	/**
+	 * Gets the name.
+	 *
+	 * @return the name
+	 */
 	public String getName() {
 		
 		return name;
 	}
 
+	/**
+	 * Sets the direction.
+	 *
+	 * @param direction the new direction
+	 */
 	public void setDirection(int direction) {
 		
 		this.direction = direction;
@@ -40,16 +71,29 @@ public class Player {
 
 
 
+	/**
+	 * Gets the direction.
+	 *
+	 * @return the direction
+	 */
 	public int getDirection() {
 		
 		return direction;
 	}
 
+	/**
+	 * Gets the head.
+	 *
+	 * @return the head
+	 */
 	public LengthNode getHead() {
 		
 		return head;
 	}
 
+	/**
+	 * Step.
+	 */
 	public void step()
 	{
 		switch(direction)
@@ -66,7 +110,7 @@ public class Player {
 		case 3: 		//LEFT
 			head = new LengthNode(head.getX() - Tron.PIXELSIZE, head.getY(), head);
 			break;
-		case -1: 		//LEFT DEBUG: En Java % n'est pas MODULO, mais RESTE donc si reste négatif, alors revenir à la norme.
+		case -1: 		//LEFT DEBUG: En Java % n'est pas MODULO, mais RESTE donc si reste nÃ©gatif, alors revenir Ã  la norme.
 			this.direction = 3;
 			head = new LengthNode(head.getX(), head.getY() - Tron.PIXELSIZE, head);
 			break;
@@ -76,6 +120,14 @@ public class Player {
 
 
 
+	/**
+	 * Loosed.
+	 *
+	 * @param other the other
+	 * @param maxWidth the max width
+	 * @param maxHeight the max height
+	 * @return true, if successful
+	 */
 	public boolean loosed(Player other, int maxWidth, int maxHeight)
 	{
 		/*
@@ -99,6 +151,11 @@ public class Player {
 		return false;
 	}
 	
+	/**
+	 * Checks if is winner.
+	 *
+	 * @param gameTimer the game timer
+	 */
 	public void isWinner(long gameTimer) {
 		
 		/*
@@ -143,12 +200,17 @@ public class Player {
 	}
 
 
+	/**
+	 * Draw.
+	 *
+	 * @param g the g
+	 */
 	public void draw(Graphics g)
 	{
 		g.setColor(color);
 		LengthNode p = head;
 		for(;p != null; p=p.getNext()) {
-			g.fillRect(p.getX(), p.getY(), Tron.PIXELSIZE, Tron.PIXELSIZE);	//AJOUTER au joueur un carré de pos getX, getY de la taille PIXELSIZE
+			g.fillRect(p.getX(), p.getY(), Tron.PIXELSIZE, Tron.PIXELSIZE);	//AJOUTER au joueur un carrÃ© de pos getX, getY de la taille PIXELSIZE
 		}
 	}
 	
