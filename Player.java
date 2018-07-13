@@ -165,8 +165,8 @@ public class Player {
 		String Time = Float.toString(GameTimer);
 	
 		
-		try {//http://localhost/phpmyadmin/db_structure.php?server=1&db=projet+java&token=c994b456fe1e28e8fc59ef52cbf98679
-			String url="jdbc:mysql://localhost:3306/tron?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC&useSSL=false";
+		try {
+			String url="jdbc:mysql://http://localhost/phpmyadmin/db_structure.php?server=1&db=tron&token=db027c0aa306a7a4420740b582393807";//localhost:3306/tron?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC&useSSL=false";
 		    String user="root";
 		    String password="";
 		   
@@ -196,7 +196,7 @@ public class Player {
 		/**
 		 * Pop-up window
 		 */
-		JOptionPane.showMessageDialog(null, "Playeur " + this.getName() + " WON!\npress F8 after OK to start again", "Game Over", JOptionPane.INFORMATION_MESSAGE);
+		JOptionPane.showMessageDialog(null, "Playeur " + this.getName() + " WON!\npress Enter after OK to start again", "Game Over", JOptionPane.INFORMATION_MESSAGE);
 	}
 
 
