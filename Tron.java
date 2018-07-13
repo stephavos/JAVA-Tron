@@ -47,9 +47,9 @@ public class Tron {
 	/** The gridh. */
 	public static int GRIDH = 400;
 	
-	/** The p 1 color. Blue */
+	/** The p 1 color. Green */
 	
-	public static Color p1Color = new Color(3,3,173); 
+	public static Color p1Color = new Color(48, 255, 0); 
 	
 	/** The p 2 color. Red */
 	public static Color p2Color = new Color(173,3,3); 
@@ -58,7 +58,7 @@ public class Tron {
 	
 	/** The playeur 1 name. */
 	
-	public static String p1Name = "Blue";
+	public static String p1Name = "Green";
 	
 	/** The playeur 2 name. */
 	public static String p2Name = "Red";
