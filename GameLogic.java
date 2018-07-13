@@ -163,4 +163,5 @@ public class GameLogic {
 		player2.draw(g);
 	}
 
+	
 }
