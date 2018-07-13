@@ -95,7 +95,4 @@ public class LengthNode {
 			return false;
 	}
 	
-
-	
-	
 }
